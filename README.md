@@ -1,5 +1,5 @@
-仓库里有两个项目分别为bookmanagement和employeesystem。
-1、bookmanagement为图书馆里系统，实现功能为图书信息的查增删改。使用springboot,thymeleaf，mysql，springmvc。
-2、employeesystem为员工信息管理系统，实现使用者的登陆和验证码验证注册以及员工信息的查增删改。使用springboot,thymeleaf，mysql，springmvc，mybatis。
+仓库里有两个项目分别为bookmanagement和employeesystem。<br>
+1、bookmanagement为图书馆里系统，实现功能为图书信息的查增删改。使用springboot,thymeleaf，mysql，springmvc。springboot启动后，网址栏输入localhost:8080启动<br>
+2、employeesystem为员工信息管理系统，实现使用者的登陆和验证码验证注册以及员工信息的查增删改。使用springboot,thymeleaf，mysql，springmvc，mybatis。springboot启动后，网址栏输入localhost:8088/ems-thymeleaf/login启动
 
 
