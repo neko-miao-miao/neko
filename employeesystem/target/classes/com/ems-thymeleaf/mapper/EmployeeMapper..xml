@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.emsthymeleaf.dao.EmployeeDao">
+    <select id="list" resultType="Employee">
+        select * from `employee`
+    </select>
+
+    <insert id="save" parameterType="Employee" useGeneratedKeys="true" keyProperty="id">
+        insert into `employee`(name,salary,photo,birthday) values(#{name},#{salary},#{photo},#{birthday})
+    </insert>
+
+    <select id="findById" parameterType="Integer" resultType="Employee">
+        select * from `employee` where id=#{id}
+    </select>
+
+    <update id="update" parameterType="Employee">
+        update `employee` set name=#{name},salary=#{salary},birthday=#{birthday},photo=#{photo}
+        where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="Integer">
+        delete from `employee` where id=#{id}
+    </delete>
+</mapper>
