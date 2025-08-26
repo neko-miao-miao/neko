@@ -1,0 +1,5 @@
+base_url: "https://your-api-domain.com"
+username: "your_username"
+password: "your_password"
+checkKey: "auto_generated_on_runtime"
+captcha: "contact_dev_team_for_captcha" 

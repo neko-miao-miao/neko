@@ -1,0 +1,127 @@
+# 合同管理测试数据
+create_contract:
+  valid_data:
+    name: "自动化测试合同"
+    amount: 100000
+    type: "服务合同"
+    status: "draft"
+  
+  # 期望的响应数据校验
+  expected_response:
+    #表的结构定义（字段类型和规则）
+    schema:
+      code: str
+      message: str
+      data: dict
+    
+    business_rules:
+      - field: "code"
+        operator: "eq"
+        value: "200"
+        message: "响应码必须为200"
+      
+      - field: "data.id"
+        operator: "gt"
+        value: "0"
+        message: "合同ID必须大于0"
+      
+      - field: "data.name"
+        operator: "eq"
+        value: "自动化测试合同"
+        message: "合同名称必须与输入一致"
+      
+      - field: "data.amount"
+        operator: "eq"
+        value: "100000"
+        message: "合同金额必须与输入一致"
+      
+      - field: "data.status"
+        operator: "in"
+        value: ["draft", "active", "pending"]
+        message: "合同状态必须在允许范围内"
+    
+  invalid_data:
+    missing_name:
+      amount: 50000
+      type: "服务合同"
+    
+    invalid_amount:
+      name: "测试合同"
+      amount: -1000
+      type: "服务合同"
+    
+    empty_payload: {}
+
+get_contract:
+  valid_params:
+    page: 1
+    size: 10
+    status: "active"
+    
+  search_params:
+    page: 1
+    size: 20
+    keyword: "测试"
+    start_date: "2024-01-01"
+    end_date: "2024-12-31"
+    
+  invalid_params:
+    invalid_page:
+      page: 0
+      size: 10
+    
+    invalid_size:
+      page: 1
+      size: 0
+
+  expected_response:
+    schema:
+      code: str
+      data: dict
+      total: int
+      page: int
+      size: int
+    
+    business_rules:
+      - field: "data"
+        operator: "length"
+        value: 10
+        message: "默认返回10条数据"
+      
+      - field: "total"
+        operator: "gte"
+        value: 0
+        message: "总数必须大于等于0"
+
+update_contract:
+  valid_updates:
+    status_update:
+      status: "active"
+    
+    amount_update:
+      amount: 200000
+    
+    full_update:
+      name: "更新后的合同名称"
+      amount: 150000
+      status: "active"
+      description: "更新后的描述"
+      
+  invalid_updates:
+    invalid_status:
+      status: "invalid_status"
+    
+    negative_amount:
+      amount: -5000
+
+# 测试用的合同ID
+test_contract_ids:
+  existing: [1, 2, 3]
+  non_existing: [999, 888]
+
+# 错误码和消息
+error_messages:
+  unauthorized: "未授权访问"
+  not_found: "合同不存在"
+  validation_error: "参数验证失败"
+  server_error: "服务器内部错误"

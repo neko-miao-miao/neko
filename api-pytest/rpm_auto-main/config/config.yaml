@@ -1,0 +1,22 @@
+# 基础配置
+base_url: "https://rpm-uat.pharmaronclinical.com"
+username: "your_username"
+password: "your_password"
+captcha: "your_captcha"  # 万能验证码，请联系开发团队获取
+
+# 请求配置
+timeout: 30              # 请求超时时间（秒）
+max_retries: 3           # 最大重试次数
+verify_ssl: true         # 是否验证SSL证书
+
+# 日志配置
+log_level: "INFO"        # 日志级别: DEBUG, INFO, WARNING, ERROR
+log_max_size: "10MB"     # 日志文件最大大小
+log_backup_count: 5      # 日志文件备份数量
+
+# Allure报告配置
+allure_results_dir: "./allure-results"
+allure_report_dir: "./allure-report"
+allure_clean_results: true
+
+#可使用set/export TEST_ENV="。。。"替换环境（export 是 Linux/Mac 系统设置环境变量的命令，Windows 系统用 set TEST_ENV=uat）

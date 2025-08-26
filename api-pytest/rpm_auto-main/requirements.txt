@@ -1,0 +1,5 @@
+allure-python-commons
+pytest>=8.0.0
+requests>=2.32.0
+allure-pytest>=2.14.0
+PyYAML>=6.0

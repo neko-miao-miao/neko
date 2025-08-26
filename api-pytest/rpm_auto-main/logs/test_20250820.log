@@ -1,0 +1,50 @@
+2025-08-20 15:53:48 - common.logger - INFO - ================================================================================
+2025-08-20 15:53:48 - common.logger - INFO - 开始执行自动化测试
+2025-08-20 15:53:48 - common.logger - INFO - ================================================================================
+2025-08-20 15:53:48 - common.logger - INFO - 开始执行测试用例: test_create_contract
+2025-08-20 15:53:48 - common.logger - INFO - 加载配置文件: config/config.yaml
+2025-08-20 15:53:48 - common.logger - INFO - 当前配置: base_url=https://rpm-uat.pharmaronclinical.com, username=dominate
+2025-08-20 15:53:48 - common.logger - INFO - 初始化RequestUtil，base_url: https://rpm-uat.pharmaronclinical.com, timeout: 30s
+2025-08-20 15:53:48 - common.logger - INFO - 发送请求 - 方法: GET, URL: https://rpm-uat.pharmaronclinical.com/rpm-api/auth/generateCaptcha?checkKey=&_t=1755676428194, 尝试: 1/3
+2025-08-20 15:53:48 - common.logger - INFO - 请求参数: {'headers': {'accept': 'application/json, text/plain, */*', 'appid': 'app-7zpfoeqntj6', 'content-type': 'application/json;charset=UTF-8'}, 'timeout': 30}
+2025-08-20 15:53:49 - common.logger - INFO - 响应状态码: 200, 响应时间: 1407.45ms
+2025-08-20 15:53:49 - common.logger - INFO - 响应内容: {"code":"200","data":{"captchaBase64String":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABQCAYAAACeXX40AAAJZElEQVR4Xu3dfYxU1RnHcZIm/YP4h01DGmtJJDFqDEkbYtvYqn9orSgtFmTRKpZUq4KVptqqIca0FLTSINbG1KQ1lrddF5CyBQU1LAuuWCquyGKUdUEU2GWVLrjALrBwz9N5rj3Lnd85c9/mnvsye77JE5zZO2dJ+OTOvXNnxhGXN88kHpsti0bI/7AQbVk0BFAmIVqMtjQaMe/+d/C+oSxEm+ncPSAj9INoy7arn9nmTi1W9hRsIUZv18jr3EkjCbGWMCrHgFwtIbxi7Ga8K7FmP9c4NBKivB22ptETKo5fXoxFBqkFyNXK3tAkQF0SohejbsKEIHG8FRVjRYCyWoCYNkJZmk/P3ooEMRCgrMgQswIo8+4VbeWVAZwz+gNls...
+2025-08-20 15:53:49 - common.logger - INFO - 成功获取验证码和checkKey，第1次尝试
+2025-08-20 15:53:49 - common.logger - INFO - 尝试登录，第1次尝试
+2025-08-20 15:53:49 - common.logger - INFO - 发送请求 - 方法: POST, URL: https://rpm-uat.pharmaronclinical.com/rpm-api/auth/login, 尝试: 1/3
+2025-08-20 15:53:49 - common.logger - INFO - 请求参数: {'json': {'username': 'dominate', 'password': '***', 'checkKey': 'D5823C56C8E2C03EB9A3FE8D8E8F5A39', 'captcha': 'your_captcha'}, 'headers': {'accept': 'application/json, text/plain, */*', 'content-type': 'application/json;charset=UTF-8', 'appid': 'app-7zpfoeqntj6'}, 'timeout': 30}
+2025-08-20 15:53:49 - common.logger - INFO - 响应状态码: 200, 响应时间: 201.13ms
+2025-08-20 15:53:49 - common.logger - INFO - 响应内容: {"code":"0019","data":{},"message":"验证码错误"}
+2025-08-20 15:53:49 - common.logger - WARNING - 登录失败，第1次尝试: assert '0019' == '200'
+  
+  - 200
+  + 0019
+2025-08-20 15:53:51 - common.logger - INFO - 尝试登录，第2次尝试
+2025-08-20 15:53:51 - common.logger - INFO - 发送请求 - 方法: POST, URL: https://rpm-uat.pharmaronclinical.com/rpm-api/auth/login, 尝试: 1/3
+2025-08-20 15:53:51 - common.logger - INFO - 请求参数: {'json': {'username': 'dominate', 'password': '***', 'checkKey': 'D5823C56C8E2C03EB9A3FE8D8E8F5A39', 'captcha': 'your_captcha'}, 'headers': {'accept': 'application/json, text/plain, */*', 'content-type': 'application/json;charset=UTF-8', 'appid': 'app-7zpfoeqntj6'}, 'timeout': 30}
+2025-08-20 15:53:51 - common.logger - INFO - 响应状态码: 200, 响应时间: 157.82ms
+2025-08-20 15:53:51 - common.logger - INFO - 响应内容: {"code":"0019","data":{},"message":"验证码错误"}
+2025-08-20 15:53:51 - common.logger - WARNING - 登录失败，第2次尝试: assert '0019' == '200'
+  
+  - 200
+  + 0019
+2025-08-20 15:53:53 - common.logger - INFO - 尝试登录，第3次尝试
+2025-08-20 15:53:53 - common.logger - INFO - 发送请求 - 方法: POST, URL: https://rpm-uat.pharmaronclinical.com/rpm-api/auth/login, 尝试: 1/3
+2025-08-20 15:53:53 - common.logger - INFO - 请求参数: {'json': {'username': 'dominate', 'password': '***', 'checkKey': 'D5823C56C8E2C03EB9A3FE8D8E8F5A39', 'captcha': 'your_captcha'}, 'headers': {'accept': 'application/json, text/plain, */*', 'content-type': 'application/json;charset=UTF-8', 'appid': 'app-7zpfoeqntj6'}, 'timeout': 30}
+2025-08-20 15:53:54 - common.logger - INFO - 响应状态码: 200, 响应时间: 171.71ms
+2025-08-20 15:53:54 - common.logger - INFO - 响应内容: {"code":"0019","data":{},"message":"验证码错误"}
+2025-08-20 15:53:54 - common.logger - WARNING - 登录失败，第3次尝试: assert '0019' == '200'
+  
+  - 200
+  + 0019
+2025-08-20 15:53:54 - common.logger - ERROR - 登录达到最大重试次数，测试终止
+2025-08-20 15:53:54 - common.logger - INFO - 测试用例执行完成: test_create_contract
+2025-08-20 15:53:54 - common.logger - INFO - 开始执行测试用例: test_get_contract
+2025-08-20 15:53:54 - common.logger - INFO - 测试用例执行完成: test_get_contract
+2025-08-20 15:53:54 - common.logger - INFO - 开始执行测试用例: test_update_contract[1-update_data0]
+2025-08-20 15:53:54 - common.logger - INFO - 测试用例执行完成: test_update_contract[1-update_data0]
+2025-08-20 15:53:54 - common.logger - INFO - 开始执行测试用例: test_update_contract[2-update_data1]
+2025-08-20 15:53:54 - common.logger - INFO - 测试用例执行完成: test_update_contract[2-update_data1]
+2025-08-20 15:53:54 - common.logger - INFO - ================================================================================
+2025-08-20 15:53:54 - common.logger - INFO - 自动化测试执行完成
+2025-08-20 15:53:54 - common.logger - INFO - ================================================================================
